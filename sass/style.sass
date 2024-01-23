@@ -6,10 +6,10 @@ $color-white: #FAFAFA
 
 $box-shadow: 0rem 0.4rem 0.4rem 0rem rgba(0, 0, 0, 0.3)
 
-@mixin style-link
+@mixin style-link($color)
   text-transform: uppercase
   text-decoration: none
-  color: $color-gray
+  color: $color
   display: inline-block
 
 
@@ -81,7 +81,7 @@ body
 .btn
   position: relative
   &:link, &:visited
-    @include style-link
+    @include style-link($color-brown-dark)
     background-color: #FFFFFF
     padding: 1.5rem 4rem
     border-radius: 5rem
