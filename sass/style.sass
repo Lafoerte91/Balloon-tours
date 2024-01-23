@@ -6,6 +6,13 @@ $color-white: #FAFAFA
 
 $box-shadow: 0rem 0.4rem 0.4rem 0rem rgba(0, 0, 0, 0.3)
 
+@mixin style-link
+  text-transform: uppercase
+  text-decoration: none
+  color: $color-gray
+  display: inline-block
+
+
 *, ::before, ::after
   margin: 0
   padding: 0
@@ -74,13 +81,10 @@ body
 .btn
   position: relative
   &:link, &:visited
-    text-transform: uppercase
-    text-decoration: none
+    @include style-link
     background-color: #FFFFFF
-    color: $color-gray
     padding: 1.5rem 4rem
     border-radius: 5rem
-    display: inline-block
     transition: all .3s
     font-size: 2rem
   &:hover
@@ -114,7 +118,7 @@ body
     transform: translateY(10rem)
   100%
     opacity: 1
-    transform: translateY(0rem)
+    transform: translateY(0)
 
 @keyframes leftToRight
   0%
@@ -124,7 +128,7 @@ body
     transform: translateX(1rem)
   100%
     opacity: 1
-    transform: translateX(0rem)
+    transform: translateX(0)
 
 @keyframes rightToLeft
   0%
@@ -134,5 +138,5 @@ body
     transform: translateX(-0.1rem)
   100%
     opacity: 1
-    transform: translateX(0rem)
+    transform: translateX(0)
 
