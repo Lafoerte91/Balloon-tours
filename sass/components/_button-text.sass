@@ -1,13 +1,19 @@
 .btn-text
-  color: $color-gray
-  font-size: 1.6rem
-  font-weight: 700
-  letter-spacing: .2rem
+  display: inline-block
   &:link, &:visited
-    
+    font-size: $font-size-paragraph
+    color: $color-gray
+    font-weight: 700
+    letter-spacing: 0.2rem
+    text-decoration: none
+    padding: 1rem
+    border-bottom: 0.1rem solid $color-brown-light
+    transition: .5s all
   &:hover
-    
-    &::after
-      
+    background-color: $color-brown-light
+    color: $color-white
+    box-shadow: $box-shadow
+    transform: translateY(-.2rem)
   &:active
+    transform: translateY(0rem)
     
