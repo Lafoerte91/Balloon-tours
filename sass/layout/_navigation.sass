@@ -1,38 +1,45 @@
 .navigation
+  &__button
+    background-color: $color-white
+    height: 8rem
+    width: 8rem
+    border-radius: 50%
+    position: fixed
+    top: 10rem
+    right: 10rem
+    z-index: 200
+    display: flex
+    align-items: center
+    justify-content: center
+    cursor: pointer
   &__background
-    width: 7rem
-    height: 7rem
+    width: 6rem
+    height: 6rem
     border-radius: 50%
     background: radial-gradient($color-brown-light, $color-brown-dark)
     position: fixed
-    right: 8rem
-    top: 8rem
+    right: 11rem
+    top: 11rem
     z-index: 100
-    transform: scale(80)
-  &__button
-    background-color: $color-white
-    height: 9rem
-    width: 9rem
-    border-radius: 50%
-    position: fixed
-    top: 7rem
-    right: 7rem
-    z-index: 200
+    transition: all .7s
   &__toggle
     display: none
   &__nav
     height: 100vh
-    width: 100%
     position: fixed
     top: 0
     right: 0
     z-index: 150
+    opacity: 0
+    width: 0
+    transition: all .3s cubic-bezier(0, 1.02, 1, .25)
   &__list
     position: absolute
     top: 50%
     left: 50%
     transform: translate(-50%, -50%)
     list-style-type: none
+    width: 100%
   &__item
     text-align: center
     &:not(:last-child)
@@ -53,3 +60,39 @@
       background-position: 100%
       color: $color-brown-dark
       transform: translateX(1rem)
+  &__toggle:checked ~ &__background
+    transform: scale(80)
+  &__toggle:checked ~ &__nav
+    width: 100%
+    opacity: 1
+  &__icon
+    position: relative
+    margin-left: auto
+    &,
+    &::before,
+    &::after
+      width: 30px
+      height: 2px
+      background: $color-black
+      display: inline-block
+      content: ""
+      position: absolute
+    &::before
+      top: -10px
+      transition: all .2s
+    &::after
+      top: 10px
+      transition: all .2s
+  &__button:hover &__icon::before
+    top: -12px
+  &__button:hover &__icon::after
+    top: 12px
+  &__toggle:checked + &__button &__icon
+    background: transparent
+  &__toggle:checked + &__button &__icon::before
+    top: 0
+    transform: rotate(135deg)
+  &__toggle:checked + &__button &__icon::after
+    top: 0
+    transform: rotate(-135deg)
+
