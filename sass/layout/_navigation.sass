@@ -12,6 +12,8 @@
     align-items: center
     justify-content: center
     cursor: pointer
+    box-shadow: $box-shadow
+
   &__background
     width: 6rem
     height: 6rem
@@ -71,22 +73,22 @@
     &,
     &::before,
     &::after
-      width: 30px
-      height: 2px
+      width: 3rem
+      height: .2rem
       background: $color-black
       display: inline-block
       content: ""
       position: absolute
     &::before
-      top: -10px
+      top: -1rem
       transition: all .2s
     &::after
-      top: 10px
+      top: 1rem
       transition: all .2s
   &__button:hover &__icon::before
-    top: -12px
+    top: -1.2rem
   &__button:hover &__icon::after
-    top: 12px
+    top: 1.2rem
   &__toggle:checked + &__button &__icon
     background: transparent
   &__toggle:checked + &__button &__icon::before
